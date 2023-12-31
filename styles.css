@@ -2,49 +2,86 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     padding: 0;
     margin: 0;
     background-color: rgb(138, 21, 206);
-    z-index: -10;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 300%;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(190, 2, 247);
+    border-radius: 0px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #efefef;
+}
+
+.container {
+    width: 1600px;
+    padding: 0 15px;
+    margin: 0 auto;
 }
 
 header {
+    
     padding-bottom: 30px;
     padding-top: 35px;
     background-color: white;
     font-family: 'Ubuntu', sans-serif;
+    background-color: black;
 }
 
 .sigari , .baloni {
     font-size: 20px;
-    margin: 80px;
     text-decoration: none;
-    color: purple;
+    color: rgb(240, 21, 240);
+    text-transform: uppercase;
+    font-weight: 900;
+    font-family: 'Nunito', sans-serif;
+}
+
+.sigari:hover {
+    color: aquamarine;
+}
+
+.variant {
+    display: flex;
+    gap: 80px;
+}
+
+.baloni:hover {
+    color: aquamarine;
 }
 
 .shop {
-    margin-bottom: 5px;
-    margin-left: 30px;
-    margin-top: 0px;
-
+    display: flex;
+    justify-content: space-around;
 }
 
 .info-header {
-    text-align: right;
-    margin-right: 80px;
+    display: flex;
+    gap: 30px;
     font-size: 20px;
 }
 
 .info {
-    margin: 50px;
     text-decoration: none;
-    color: palevioletred;
+    color: blueviolet;
+    font-weight: 700;
+    font-family: 'Nunito', sans-serif;
+}
+
+.info:hover {
+    color: aquamarine;
 }
 
 h1 {
@@ -66,62 +103,62 @@ h1 > span {
     text-align: center;
 }
 
-.main-content > button {
+.buy {
     padding-top: 15px;
     padding-bottom: 15px;
     padding-left: 60px;
     padding-right: 60px;
     border-radius: 10px;
     background-color: rgb(174, 43, 226);
-    color: white;
     font-size: 24px;
-    border-style: inset;
-    border-color: plum;
+    border: 2px solid indigo;
     font-family: 'Rubik Scribble';
 }
 
-.main-content > button:hover {
-    cursor: pointer;
-    border: double;
-    border-color: indigo;
+.buy > a {
+    text-decoration: none;
+    color: indigo;
+    font-family: 'Rubik Scribble';
+    font-weight: 900;
+}
+
+.buy:hover a {
     color: rgb(255, 1, 213);
+    transition: all 0.5s;
 }
 
-.main-content > button:active {
+.buy:hover {
+    cursor: pointer;
+}
+
+.buy:active {
     cursor: default;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-left: 60px;
-    padding-right: 60px;
-    border-radius: 10px;
-    background-color: blueviolet;
-    color: white;
-    font-size: 24px;
-    border-color: plum;
-    font-family: 'Rubik Scribble';
 }
 
-h2 {
-    font-family: 'Ubuntu', sans-serif;
-    color: orange;
-    margin-left: 50px;
-    margin-top: 200px;
-    text-align: center;
+.rec {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    color: aquamarine;
     font-size: 34px;
     font-family: 'Rubik Doodle Shadow';
-    word-spacing: 10px;
+    letter-spacing: 6px;
 }
 
-h2 > span {
-    color: tomato;
+.rec > span {
+    color: rgb(168, 216, 255);
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 80px;
 }
 
 .card {
-    margin-left: 100px;
-    margin: 50px;
     background-color: pink;
     padding-bottom: 50px;
-    display: inline-block;
     text-align: center;
     border-radius: 10px;
     font-family: 'Ubuntu', sans-serif;
@@ -143,12 +180,16 @@ h2 > span {
     color: red;
 }
 
+.sigaretis {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 80px;
+}
+
 .sigara {
-    margin-left: 100px;
-    margin: 50px;
     background-color: pink;
     padding-bottom: 50px;
-    display: inline-block;
     text-align: center;
     border-radius: 10px;
     font-family: 'Ubuntu', sans-serif;
@@ -167,25 +208,48 @@ h2 > span {
 }
 
 #sigari {
-    margin-top: 0;
-    color: yellow;
+    color: aquamarine;
+    text-align: center;
+    font-size: 34px;
+    font-family: 'Rubik Doodle Shadow';
+    letter-spacing: 6px;
+    margin-top: 30px;
+}
+
+#sigari > span {
+    color: greenyellow;
+}
+
+.perchovocki {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 #peckovki {
-    margin-top: 0;
-    color: grey;
+    font-family: 'Rubik Doodle Shadow';
+    color: azure;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    font-size: 34px;
+    letter-spacing: 6px;
 }
 
 #peckovki > span {
-    color: rgb(37, 0, 247);
+    color: aquamarine;
+}
+
+.perchovocki {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    padding-bottom: 50px;
 }
 
 .pereci {
-    margin-left: 100px;
-    margin: 50px;
     background-color: pink;
     padding-bottom: 50px;
-    display: inline-block;
     text-align: center;
     border-radius: 10px;
     font-family: 'Ubuntu', sans-serif;
@@ -206,19 +270,21 @@ h2 > span {
 footer {
     background-color: black;
     height: 300px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 #footer-title {
     color: rgb(203, 9, 252);
     font-family: 'Rubik Scribble';
+    letter-spacing: 6px;
+    font-size: 34px;
+    margin-left: 50px;
 }
 
 #footer-title > span {
     color: rgb(255, 3, 255);
-}
-
-.help {
-    text-align: center;
 }
 
 .help > p {
@@ -230,4 +296,32 @@ footer {
 .help > p > a {
     text-decoration: none;
     color: aqua;
+}
+
+.buying {
+    padding: 20px 40px 20px 40px;
+    border-radius: 10px;
+    background-color: rgb(220, 14, 247);
+    font-family: 'Rubik Doodle Shadow';
+    font-weight: 900;
+    font-size: 15px;
+}
+
+.buying > a {
+    text-decoration: none;
+    color: indigo;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+a:hover {
+    transition: all 0.5s;
+}
+
+.buying:hover a {
+    color: aqua;
+    transition: all 0.5s;
+    font-weight: 900;
+    cursor: pointer;
 }
